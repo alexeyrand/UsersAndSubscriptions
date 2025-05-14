@@ -1,9 +1,8 @@
 package ru.alexeyrand.usersandsubscriptions.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
 /**
  * Подписка
  */
@@ -17,4 +16,6 @@ import lombok.*;
 public class Subscription extends BaseEntity {
     @Column(name = "user_id")
     private Long userId;
+    @Column(name = "type")
+    private String type;
 }

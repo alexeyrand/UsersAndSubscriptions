@@ -1,9 +1,6 @@
 package ru.alexeyrand.usersandsubscriptions.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
@@ -19,7 +16,9 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class User extends BaseEntity {
+    @Column(name = "username")
     String username;
+    @Column(name = "password")
     String password;
     @OneToMany
     @JoinColumn(name = "user_id")
